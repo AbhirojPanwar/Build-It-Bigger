@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "795383797878",
+    "firebase_url": "https://fir-app-776ba.firebaseio.com",
+    "project_id": "fir-app-776ba",
+    "storage_bucket": "fir-app-776ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795383797878:android:30ed69843625e25b",
+        "android_client_info": {
+          "package_name": "learning.com.demoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795383797878-vrc9din98lk9ji75m8vbano3kd43oj84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzg8jf4z0oh2AaTwHOIK9Yfyl_JNo-3OY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
