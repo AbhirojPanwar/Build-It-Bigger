@@ -30,6 +30,7 @@ dependencies {
     compile 'com.google.firebase:firebase-ads:9.6.1'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:9.6.1'
+    compile project(':jokelibrary')
 }
 
 apply plugin: 'com.google.gms.google-services'
