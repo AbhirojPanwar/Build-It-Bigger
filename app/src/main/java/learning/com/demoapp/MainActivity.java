@@ -1,8 +1,8 @@
 package learning.com.demoapp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +20,9 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import Data.DataStore;
+import learning.com.jokeactivity.JokeDisplayActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,15 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         adView.loadAd(request);
 
-        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
-                .coordinatorLayout);
-
         Button pressme = (Button) findViewById(R.id.pressme);
         pressme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(coordinatorLayout,new JokeSupply().getJoke(),Snackbar.LENGTH_LONG);
-                snackbar.show();
+            Intent i=new Intent(MainActivity.this, JokeDisplayActivity.class);
+                i.putExtra(DataStore.KEY,new JokeSupply().getJoke());
+                startActivity(i);
             }
         });
 
