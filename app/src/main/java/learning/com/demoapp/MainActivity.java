@@ -1,7 +1,6 @@
 package learning.com.demoapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.JokeSupply;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -22,9 +20,6 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
-
-import Data.DataStore;
-import learning.com.jokeactivity.JokeDisplayActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
         pressme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Intent i=new Intent(MainActivity.this, JokeDisplayActivity.class);
-                i.putExtra(DataStore.KEY,new JokeSupply().getJoke());
-                startActivity(i);
                 new EndpointsAsyncTask().execute(new Pair<Context, String>(MainActivity.this, "Manfred"));
             }
         });

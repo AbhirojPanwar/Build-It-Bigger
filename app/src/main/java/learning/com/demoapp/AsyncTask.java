@@ -1,15 +1,19 @@
 package learning.com.demoapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
-import android.widget.Toast;
 
+import com.example.JokeSupply;
 import com.example.abhiroj.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
 import java.io.IOException;
+
+import Data.DataStore;
+import learning.com.jokeactivity.JokeDisplayActivity;
 
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
@@ -42,7 +46,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         String name = params[0].second;
 
         try {
-            return myApiService.sayHi(name).execute().getData();
+            return myApiService.sayHi(new JokeSupply().getJoke()).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -50,6 +54,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        Intent i = new Intent(context, JokeDisplayActivity.class);
+        i.putExtra(DataStore.KEY, result);
+        context.startActivity(i);
     }
 }
