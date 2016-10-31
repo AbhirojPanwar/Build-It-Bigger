@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/bJ1Tjg-X3hQYU9tsfPEV9Iq6xgQ\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/iqHqwnQQJ5yaxWz0vtvpqO0ja_4\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -13,8 +13,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://learning.com.demoapp.appspot.com/_ah/api/",
- "rpcUrl": "https://learning.com.demoapp.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://fir-app-776ba.appspot.com/_ah/api/",
+ "rpcUrl": "https://fir-app-776ba.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {
