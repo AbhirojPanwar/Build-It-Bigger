@@ -14,6 +14,10 @@ import java.io.IOException;
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
+    Context mContext;
+    public EndpointsAsyncTask(Context context) {
+        mContext = context;
+    }
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {

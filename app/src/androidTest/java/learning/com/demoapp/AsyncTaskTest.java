@@ -1,9 +1,7 @@
 package learning.com.demoapp;
 
-import android.content.Context;
 import android.test.AndroidTestCase;
-
-import org.mockito.Mock;
+import android.test.mock.MockContext;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,15 +9,15 @@ public class AsyncTaskTest extends AndroidTestCase {
 
     EndpointsAsyncTask task;
     String result;
-    @Mock
-    Context mockContext;
+
+    MockContext mockContext=new MockContext();
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
 
         result = null;
-        task = new EndpointsAsyncTask() {
+        task = new EndpointsAsyncTask(mockContext) {
             @Override
             protected void onPostExecute(String joke) {
                 //No need to launch intent, so override this method
