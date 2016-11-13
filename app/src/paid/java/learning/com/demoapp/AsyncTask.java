@@ -17,7 +17,6 @@ import learning.com.jokeactivity.JokeDisplayActivity;
 
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
-    private Context context;
     Context mContext;
     public EndpointsAsyncTask(Context context) {
     mContext=context;
@@ -55,8 +54,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected void onPostExecute(String result) {
-        Intent i = new Intent(context, JokeDisplayActivity.class);
+        Intent i = new Intent(mContext, JokeDisplayActivity.class);
         i.putExtra(DataStore.KEY, result);
-        context.startActivity(i);
+        mContext.startActivity(i);
     }
 }
