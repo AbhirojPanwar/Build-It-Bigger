@@ -15,8 +15,9 @@ import java.io.IOException;
 import Data.DataStore;
 import learning.com.jokeactivity.JokeDisplayActivity;
 
-class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
+    private Context context;
     Context mContext;
     public EndpointsAsyncTask(Context context) {
     mContext=context;
@@ -46,7 +47,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
 
         try {
-            return myApiService.sayHi(new JokeSupply().getJoke()).execute().getData();
+            return myApiService.fetchJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }

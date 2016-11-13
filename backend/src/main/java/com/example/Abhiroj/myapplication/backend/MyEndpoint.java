@@ -37,4 +37,12 @@ public class MyEndpoint {
         return response;
     }
 
+
+    public MyBean fetchJoke() {
+        MyBean response = new MyBean();
+        response.setData(new com.example.JokeSupply().getJoke());
+
+        return response;
+    }
+
 }
